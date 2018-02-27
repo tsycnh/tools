@@ -16,9 +16,17 @@
 * scale.py 按比例对图像进行批量缩放  支持jpg格式图像  
 用法：
 ```python
-    s = Scale(images_dir='./test2',#存有目标图像的目录
-                scale=2)#缩放尺度如2、3为扩大2、3倍。0.5,0.25为缩小一半、四分之一
+    s = Scale(images_dir='/path/to/img/dir',#存有目标图像的目录
+    width=128,
+    img_ext='jpg')# 目标扩展名
 ```
+四种用法：
+1. **仅**设置scale值，其他留空，那么将按照scale成比例缩放，如0.5,2
+2. 仅设置width值，其他留空，将按照新的width值成比例缩放
+3. 仅设置height值，其他留空，将按照新的height值成比例缩放
+4. 同时设置width、height值，其他留空，按照新的width、height强制缩放
+
+
 输出的图像会在images_dir下的新目录内，名为 scale_2、scale_0.5等等  
 
 ==================
