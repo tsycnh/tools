@@ -71,4 +71,4 @@ if __name__ =='__main__':
                   out_dir='./test',
                   width=400,
                   height=400,
-                  num=1800)
+                  num=2000)

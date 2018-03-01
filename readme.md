@@ -13,6 +13,26 @@
 都切割完毕。  
 
 ================
+
+* random_paste.py 在一张背景图上随机粘贴一定数量的前景图，支持jpg。批量随机操作
+
+用法：
+
+```python
+    lp = LetsPaste(bg_dir='/path/to/bg/dir',    # 背景图图像目录
+                    rect_dir='/path/to/obj/dir',# 前景图图像目录
+                    total_num=100,              # 一共要生成多少张新图   
+                    pic_min=1,                  # 每张bg上至少几个前景（包含）
+                    pic_max=3)                  # 每张bg上之多几个前景（包含）
+    lp.start_paste()  
+```
+
+每生成一张新bg都是先从背景图库里随机选一张，从前景图库随机选pic_min~pic_max张，
+然后随机将这几张图粘贴到bg上，并保证几个前景不重叠。然后输出图像至bg目录同等级的magic_imgs目录下
+
+
+================
+
 * scale.py 按比例对图像进行批量缩放  支持jpg格式图像  
 用法：
 ```python
