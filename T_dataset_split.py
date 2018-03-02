@@ -25,4 +25,4 @@ class LetsSplit():
             print('已拷贝：',dst)
 
 if __name__ =='__main__':
-    ls = LetsSplit('/Users/shidanlifuhetian/All/Tdevelop/Keras-GAN/cyclegan/datasets/plates/trainB',train_count=1500)
+    ls = LetsSplit('/Users/shidanlifuhetian/All/Tdevelop/Keras-GAN/cyclegan/datasets/NEU surface defect database_scale_0',train_count=1500)

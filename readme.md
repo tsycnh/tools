@@ -30,10 +30,19 @@
 每生成一张新bg都是先从背景图库里随机选一张，从前景图库随机选pic_min~pic_max张，
 然后随机将这几张图粘贴到bg上，并保证几个前景不重叠。然后输出图像至bg目录同等级的magic_imgs目录下
 
+带pascal voc标签的用法
+```
+    lpwl = LetsPasteWithLabel(bg_dir='/path/to/bg/dir',#大图
+                              rect_dir='/path/to/roi/dir',#往大图上粘贴的小图
+                              total_num=100,pic_min=1,pic_max=3)
+    lpwl.start_paste()
+```
+标签的输出也是饮用字labelimg  
+会在每张新图像的同层次目录下保存同名的xml，符合Pascal Voc的bounding box标记格式，可以用labelimg程序进行查看 https://github.com/tzutalin/labelImg
 
 ================
 
-* scale.py 按比例对图像进行批量缩放  支持jpg格式图像  
+* scale.py 按比例对图像进行批量缩放  输出均为jpg格式图像  
 用法：
 ```python
     s = Scale(images_dir='/path/to/img/dir',#存有目标图像的目录
@@ -47,7 +56,7 @@
 4. 同时设置width、height值，其他留空，按照新的width、height强制缩放
 
 
-输出的图像会在images_dir下的新目录内，名为 scale_2、scale_0.5等等  
+输出的图像会在images_dir同等级目录内，名为 ~_scale_2、~_scale_0.5等等  
 
 ==================
 
@@ -59,7 +68,7 @@
                     train_count=1500)#训练集图像数量
 ```
 
-程序灰度去目标目录里的所有jpg图像，并将train_count数目的图像拷贝到同等级的train目录下，剩余的图像拷贝到
+程序会读取目标目录里的所有jpg图像，并将train_count数目的图像拷贝到同等级的train目录下，剩余的图像拷贝到
 同等级的test目录下。所有的图像顺序都是随机打乱的
 
 ==================

@@ -15,6 +15,10 @@ def get_dir_filelist_by_extension(dir, ext):
             file_list.append(dir + '/' + item)
     return file_list
 
+def get_parent_dir(dir):
+    parent_dir, tail = os.path.split(os.path.abspath(dir))  # 使用abspath函数先规范化路径
+    return parent_dir,tail
+
 
 def create_new_empty_dir(dir):
     if os.path.exists(dir):
