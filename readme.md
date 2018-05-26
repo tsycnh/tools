@@ -37,7 +37,7 @@
                               total_num=100,pic_min=1,pic_max=3)
     lpwl.start_paste()
 ```
-标签的输出也是饮用字labelimg  
+标签的输出也是引用自labelImg  
 会在每张新图像的同层次目录下保存同名的xml，符合Pascal Voc的bounding box标记格式，可以用labelimg程序进行查看 https://github.com/tzutalin/labelImg
 
 ================
@@ -72,3 +72,15 @@
 同等级的test目录下。所有的图像顺序都是随机打乱的
 
 ==================
+
+* sift.py 对图像进行筛选，依据图像大小即长宽比
+
+用法
+```
+
+```
+===================
+* center_cut.py 在图像中心切割最大的正方形
+
+===================
+* steel_img_batch_convert.py 批量的用杨老师的软件来将img图像转换成bmp图像

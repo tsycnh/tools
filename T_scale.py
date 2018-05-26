@@ -33,4 +33,4 @@ class Scale():
             print('已保存',dst_name)
 
 if __name__ == '__main__':
-    s = Scale(images_dir='/Users/shidanlifuhetian/All/Tdevelop/Keras-GAN/cyclegan/datasets/NEU surface defect database',width=128,img_ext='bmp')
+    s = Scale(images_dir='/Users/shidanlifuhetian/All/Tdevelop/cyclegan/datasets/KHB_ImgSets/train/水滴_sifted_w128_h128_centercut',width=128,img_ext='jpg')

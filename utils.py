@@ -6,6 +6,22 @@ import numpy as np
 所有的矩形坐标规范为：[xmin,ymin,xmax,ymax]，即左上角坐标加右下角坐标
 '''
 
+def get_immediate_subdirectories(a_dir):
+  return [name for name in os.listdir(a_dir)
+    if os.path.isdir(os.path.join(a_dir, name))]
+
+# 获取某一文件夹下的所有文件夹，各种深度的文件夹都可以得到
+def get_all_dirs(base_dir, output=[]):
+    base_dir=os.path.abspath(base_dir)
+    current_dir = base_dir
+    subdirs = get_immediate_subdirectories(current_dir)
+    if len(subdirs) != 0:
+        for subdir in subdirs:
+            # print(base_dir+'/'+subdir)
+            output.append(base_dir + '/' + subdir)
+            get_all_dirs(base_dir +'/' + subdir, output)
+    return output
+
 
 def get_dir_filelist_by_extension(dir, ext):
     r = os.listdir(dir)

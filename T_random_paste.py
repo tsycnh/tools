@@ -95,6 +95,6 @@ if __name__ == '__main__':
     # lp = LetsPaste(bg_dir='./test',rect_dir='./rois',total_num=100,pic_min=1,pic_max=3)
     # lp.start_paste()
     lpwl = LetsPasteWithLabel(bg_dir='/Users/shidanlifuhetian/All/data/purebg_400',
-                              rect_dir='/Users/shidanlifuhetian/All/Tdevelop/Keras-GAN/cyclegan/datasets/plates/trainA',
+                              rect_dir='/Users/shidanlifuhetian/All/Tdevelop/cyclegan/translation/',
                               total_num=100,pic_min=1,pic_max=3)
     lpwl.start_paste()
