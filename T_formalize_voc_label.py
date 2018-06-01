@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 import utils
 import os
 
+# 工具作用：针对一些标签没有写文件扩展名的，给他加上。
 file_list = utils.get_dir_filelist_by_extension(dir='/Users/shidanlifuhetian/All/data/NEU-DET/ANNOTATIONS',ext='xml')
 # print(file_list)
 for file in file_list:
