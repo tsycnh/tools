@@ -40,6 +40,7 @@ def create_new_empty_dir(dir):
     if os.path.exists(dir):
         shutil.rmtree(dir)
     os.mkdir(dir)
+    return dir
 
 
 # 判断两矩形是否相交，若相交返回相交面积，否则返回-1,gap表示两个矩形之间如果有gap大小的距离也算相交
