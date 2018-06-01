@@ -5,8 +5,10 @@ import sys
 import shutil
 # 工具作用：批量移除没有bbox的标记文件。标记文件应为xml文件，格式为pascal voc标准格式。
 # 同时将标签对应的图像拷贝到上层目录下的images文件夹下
-# 使用方法：python /path/to/this_file.py folder_path
+# 使用方法1：python /path/to/this_file.py folder_path
+# 使用方法2: python /path/to/this_file.py folder_path source_img_folder
 # folder_path 中所有不包含object标签的xml都会被删除
+# source_img_folder 是原始存图像的目录
 def delete_empty_label(labels_folder_path):
     file_list = utils.get_dir_filelist_by_extension(dir=labels_folder_path, ext='xml')
     # print(file_list)
@@ -61,4 +63,7 @@ def export_image_and_label_selfdefine(labels_folder_path,images_folder):
             print(full_path + '复制失败')
 if __name__ == "__main__":
     delete_empty_label(sys.argv[1])
-    export_image_and_label(sys.argv[1])
+    if len(sys.argv) <=2:
+        export_image_and_label(sys.argv[1])
+    else:
+        export_image_and_label_selfdefine(sys.argv[1],sys.argv[2])
