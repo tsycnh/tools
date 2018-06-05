@@ -12,7 +12,9 @@
 程序首先在prison范围内生成num个roi区域，然后每次依据roi区域进行切割的时候，都会从in_dir内随机拿出一张图片进行切割，并存储切割结果。直到所有的roi
 都切割完毕。  
 
-================
+
+<hr>
+
 
 * random_paste.py 在一张背景图上随机粘贴一定数量的前景图，支持jpg。批量随机操作
 
@@ -40,7 +42,9 @@
 标签的输出也是引用自labelImg  
 会在每张新图像的同层次目录下保存同名的xml，符合Pascal Voc的bounding box标记格式，可以用labelimg程序进行查看 https://github.com/tzutalin/labelImg
 
-================
+
+<hr>
+
 
 * scale.py 按比例对图像进行批量缩放  输出均为jpg格式图像  
 用法：
@@ -58,7 +62,9 @@
 
 输出的图像会在images_dir同等级目录内，名为 ~_scale_2、~_scale_0.5等等  
 
-==================
+
+<hr>
+
 
 * dataset_split.py  对图像数据库进行训练集和测试集的拆分
 
@@ -71,7 +77,9 @@
 程序会读取目标目录里的所有jpg图像，并将train_count数目的图像拷贝到同等级的train目录下，剩余的图像拷贝到
 同等级的test目录下。所有的图像顺序都是随机打乱的
 
-==================
+
+<hr>
+
 
 * sift.py 对图像进行筛选，依据图像大小即长宽比
 
@@ -79,10 +87,25 @@
 ```
 
 ```
-===================
-* formalize_voc_label.py 规范化voc格式的标记
-===================
+
+<hr>
+
+* formalize_voc_label.py
+
+规范化voc格式的标记
+将指定文件夹下符合pascol voc格式的xml文件进行更改。
+更改策略为对指定的tag标签进行内容替换。
+
+用法
+```
+formalize_voc_label.py /path/to/xmls/folder tag_name tag_new_text
+```
+
+
+<hr>
+
 * center_cut.py 在图像中心切割最大的正方形
 
-===================
+<hr>
+
 * steel_img_batch_convert.py 批量的用杨老师的软件来将img图像转换成bmp图像
