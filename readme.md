@@ -109,3 +109,10 @@ formalize_voc_label.py /path/to/xmls/folder tag_name tag_new_text
 <hr>
 
 * steel_img_batch_convert.py 批量的用杨老师的软件来将img图像转换成bmp图像
+
+<hr>
+
+* merge_datasets.py 批量的将已画好bbox的图像们组织到一起，并打乱排序
+<hr>
+
+* batch_rename.py 批量更改文件名

@@ -22,7 +22,6 @@ def get_all_dirs(base_dir, output=[]):
             get_all_dirs(base_dir +'/' + subdir, output)
     return output
 
-
 def get_dir_filelist_by_extension(dir, ext):
     r = os.listdir(dir)
     file_list = []
@@ -35,13 +34,11 @@ def get_parent_dir(dir):
     parent_dir, tail = os.path.split(os.path.abspath(dir))  # 使用abspath函数先规范化路径
     return parent_dir,tail
 
-
 def create_new_empty_dir(dir):
     if os.path.exists(dir):
         shutil.rmtree(dir)
     os.mkdir(dir)
     return dir
-
 
 # 判断两矩形是否相交，若相交返回相交面积，否则返回-1,gap表示两个矩形之间如果有gap大小的距离也算相交
 def rect_interaction(rect1, rect2, gap=0):
@@ -59,7 +56,6 @@ def rect_interaction(rect1, rect2, gap=0):
     else:
         return -1
 
-
 # 生成num个随机位置的矩形区域，每个矩形区域大小为width*height，坐标范围是prison内
 def generate_rects(num,width,height,prison):
 
@@ -75,3 +71,9 @@ def generate_rects(num,width,height,prison):
         rects.append(rect)
     # rect格式: [xmin,ymin,xmax,ymax]
     return rects
+
+def fixed_length(num,length):
+    a = str(num)
+    while len(a) < length:
+        a = '0'+a
+    return a
